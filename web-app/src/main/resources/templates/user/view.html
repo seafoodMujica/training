@@ -5,7 +5,7 @@
 <body>
 
   <div class="container">
-    <h1>ユーザー情報: 一覧画面</h1>
+    <h1>ユーザー情報: 詳細画面</h1>
     <br>
 
     <table class="table table-striped">
@@ -27,11 +27,10 @@
           <td class="center" th:text="${phone}"></td>
           <td class="center" th:text="${#temporals.format(updateDate, 'yyyy/MM/dd HH:mm:ss')}"></td>
           <td class="center" th:text="${createDate}"></td>
-          <!-- 詳細画面へ -->
-          <td><a th:href="@{/user/view/{id}(id=${id})}" class="btn btn-primary">編集</a></td>
         </tr>
       </tbody>
     </table>
+    <a th:href="@{/user/list}" class="btn btn-primary">戻る</a>
   </div>
 
 </body>
