@@ -12,13 +12,13 @@ import com.example.demo.repository.UserRepository;
 public class UserService {
 
 	@Autowired
-	private UserRepository userRepository;
+	UserRepository userRepository;
 
 	public List<User> searchAll() {
 		return userRepository.findAll();
 	}
 
-	public User findById(Long id) {
+	public User search(Long id) {
 		return userRepository.findById(id).get();
 	}
 }

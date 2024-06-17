@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +13,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "user")
-public class User implements Serializable {
+public class User {
 
 	@Id
 	@Column(name = "id")
@@ -31,11 +30,11 @@ public class User implements Serializable {
 	private String phone;
 
 	@Column(name = "update_date")
-	private Date updateDate;
+	private LocalDateTime updateDate;
 
 	@Column(name = "create_date")
-	private Date createDate;
+	private LocalDateTime createDate;
 
 	@Column(name = "delete_date")
-	private Date deleteDate;
+	private LocalDateTime deleteDate;
 }

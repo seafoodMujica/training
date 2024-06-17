@@ -17,22 +17,19 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
-	@GetMapping(value = "/user/list")
+	@GetMapping("/user/list")
 	public String displayList(Model model) {
-		List<User> userlist = userService.searchAll();
-		model.addAttribute("userlist", userlist);
+		List<User> userList = userService.searchAll();
+		model.addAttribute("userList", userList);
 		return "user/list";
 	}
 
-	@GetMapping(value = "/user/add")
-	public String displayAdd(Model model) {
-		return "user/add";
-	}
-
 	@GetMapping("/user/{id}")
-	public String displayView(@PathVariable Long id, Model model) {
-		User user = userService.findById(id);
-		model.addAttribute("userData", user);
-		return "user/view";
+	public String displayDetail(@PathVariable Long id, Model model) {
+
+		User user = userService.search(id);
+		model.addAttribute("user", user);
+
+		return "user/detail";
 	}
 }
