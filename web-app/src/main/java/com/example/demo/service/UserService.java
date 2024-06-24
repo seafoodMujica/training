@@ -36,4 +36,11 @@ public class UserService {
 
 		userRepository.deleteById(id);
 	}
+
+	public User updateUser(User user) {
+
+		LocalDateTime now = LocalDateTime.now();
+		user.setUpdateDate(now);
+		return userRepository.save(user);
+	}
 }
