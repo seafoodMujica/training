@@ -20,9 +20,11 @@ public class UserService {
 	}
 
 	public User search(Long id) {
+		
 		return userRepository.findById(id).get();
 	}
 
+	// 86ページまで
 	public User createUser(User user) {
 
 		LocalDateTime now = LocalDateTime.now();
